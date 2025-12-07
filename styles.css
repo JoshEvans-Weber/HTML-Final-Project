@@ -81,7 +81,7 @@ footer {
   grid-template-rows: repeat(var(--cards-per-page), var(--row-height));
   grid-auto-flow: column;
   transition: transform var(--transition-speed) ease-in-out;
-  /*row-gap: 20px;*/
+  align-items: start;
 }
 
 .grid-item {
@@ -91,13 +91,13 @@ footer {
   background: rgba(123,123,123, 0.52);
   display: flex;
   justify-content: center;
-  align-items: center;
   font-size: 1.2rem;
   font-weight: bold;
   backdrop-filter: blur(6.1px);
   -webkit-backdrop-filter: blur(6.1px);
   display: grid;
   grid-template-rows: 1 auto;
+  align-items: start;
 }
 
 .grid-footer {
@@ -120,12 +120,11 @@ footer {
   -webkit-backdrop-filter: blur(6.1px);
 }
 .menu-header{
-  grid-column: 1;
   text-align: center;
   margin-top: 15px;
   font-size: 5rem;
   color: white;
-  position: bottom 2px;
+  align-items: bottom;
 }
 .menu-list{
   padding: 5px 30px 15px 30px;
@@ -140,6 +139,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .menu-item{
+  align-items: top;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 20px 20px 20px 20px;
   font-size: 1rem;
@@ -217,16 +217,14 @@ footer {
     color: white;
     border-radius: 4px;
     position: fixed; 
-    bottom: 4px;
-    
+    bottom: 1px;
+    justify-self: start;
     transition: background-color 0.2s;
     user-select: none;
     text-align: center;
-    width: 120px;
-    height: 10px;
     z-index: 100;
 }
 .nav-button:hover { background-color: #2980b9; }
 
-.prev-btn { left: 32%; } 
-.next-btn { right: 32%; }
+.prev-btn { left: 33.5%; } 
+.next-btn { right: 33.5%; }
