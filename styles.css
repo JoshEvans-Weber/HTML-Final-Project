@@ -1,7 +1,7 @@
 /* --- Global Variables & Keyframes --- */
 :root {
   --col-width: 800px; 
-  --row-height: 1000px;
+  --row-height: auto;
   --cards-per-page: 1;
   --total-pages: 10;
   --transition-speed: 0.5s;
@@ -49,6 +49,11 @@ h1 {
   background: rgba(123,123,123, 0.52);
   color: white;
 }
+hr {
+  width: 80%;
+  background-color: rgba(124,124,124, 0.55);
+  border: none;
+}
 footer {
   backdrop-filter: blur(6.1px);
   -webkit-backdrop-filter: blur(6.1px);
@@ -60,11 +65,6 @@ footer {
 }
 .bulletless {
   list-style-type:none;
-}
-.page1 {
-  display:grid;
-   grid-template-columns: 1;
-  
 }
 /* --- Grid and Viewport Setup --- */
 .grid-viewport {
@@ -96,12 +96,13 @@ footer {
   font-weight: bold;
   backdrop-filter: blur(6.1px);
   -webkit-backdrop-filter: blur(6.1px);
-  **display: grid;**
+  display: grid;
+  grid-template-rows: 1 auto;
 }
 
 .grid-footer {
   display: grid;
-  grid-template-columns: repeat(3, 33%);
+  grid-template-columns: repeat(3, 33.33333%);
   grid-template-rows: repeat(1, 30px));
   grid-auto-flow: column;
   transition: transform var(--transition-speed) ease-in-out;
@@ -119,22 +120,40 @@ footer {
   -webkit-backdrop-filter: blur(6.1px);
 }
 .menu-header{
-  grid-column: 1 / span 2; /* Spans across the item and price columns */
+  grid-column: 1;
   text-align: center;
   margin-top: 15px;
-  margin-bottom: 10px;
-  font-size: 1.4rem;
+  font-size: 5rem;
   color: white;
+  position: bottom 2px;
 }
 .menu-list{
-  grid-column: 1 / span 2; 
-  display: contents; 
-  list-style: none; 
-  padding: 0;
-  margin: 0;
+  padding: 5px 30px 15px 30px;
+}
+.menu-item-name{
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 20px 20px 20px 20px;
+  font-size: 1rem;
+  padding: 5px 5px 5px 5px;
+  justify-self: start;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .menu-item{
-  display: contents;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px 20px 20px 20px;
+  font-size: 1rem;
+  padding: 5px 60px 15px 20px;
+  justify-self: start;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.menu-price{
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px 20px 20px 20px;
+  font-size: 1rem;
+  padding: 5px 5px 5px 5px;
+  justify-self: start;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 /* --- STATE TRANSLATIONS (The Horizontal Slide) --- */
 
