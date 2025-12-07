@@ -1,1 +1,0 @@
-to view the website launch the start.bat file then type localhost into your web browser's URL bar and hit enter.
