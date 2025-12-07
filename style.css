@@ -1,0 +1,213 @@
+/* --- Global Variables & Keyframes --- */
+:root {
+  --col-width: 800px; 
+  --row-height: 1000px;
+  --cards-per-page: 1;
+  --total-pages: 10;
+  --transition-speed: 0.5s;
+  
+  /* CRITICAL FIX: Shifts are now multiples of the single column width (200px) */
+  --shift-c1: 0px; 
+  --shift-c2: calc(-1 * var(--col-width));   /* Shift 1 column */
+  --shift-c3: calc(-2 * var(--col-width));   /* Shift 2 columns */
+  --shift-c4: calc(-3 * var(--col-width));   /* Shift 3 columns */
+  --shift-c5: calc(-4 * var(--col-width));   /* Shift 4 columns */
+  --shift-c6: calc(-5 * var(--col-width));   /* Shift 5 columns */
+  --shift-c7: calc(-6* var(--col-width)); 
+  --shift-c8: calc(-7 * var(--col-width)); 
+  --shift-c9: calc(-8 * var(--col-width)); 
+  --shift-c10: calc(-9 * var(--col-width)); 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    background-image: url('https://images.unsplash.com/photo-1698133466726-b8c778a8cc4b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjUwODQyMDh8&ixlib=rb-4.1.0&q=85');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: #f4f4f4;
+}
+
+input[type="radio"] { display: none; }
+
+@keyframes flash-fade {
+    0% { opacity: 1; }
+    40% { opacity: 0; }
+    60% { opacity: 0; }
+    100% { opacity: 1; }
+}
+h1 {
+  padding: 10px 20px;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 50px 50px;
+  background: rgba(123,123,123, 0.52);
+  color: white;
+}
+footer {
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  color: white;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  z-index: 15;
+}
+.bulletless {
+  list-style-type:none;
+}
+.page1 {
+  display:grid;
+   grid-template-columns: 1;
+  
+}
+/* --- Grid and Viewport Setup --- */
+.grid-viewport {
+  width: var(--col-width); 
+  height: calc(var(--cards-per-page) * var(--row-height));
+  overflow: hidden;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--total-pages), var(--col-width));
+  grid-template-rows: repeat(var(--cards-per-page), var(--row-height));
+  grid-auto-flow: column;
+  transition: transform var(--transition-speed) ease-in-out;
+  /*row-gap: 20px;*/
+}
+
+.grid-item {
+  height: var(--row-height);
+  border: 1px solid #aaa;
+  border-radius: 20px 50px 20px 50px;
+  background: rgba(123,123,123, 0.52);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  **display: grid;**
+}
+
+.grid-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(1, 30px));
+  grid-auto-flow: column;
+  transition: transform var(--transition-speed) ease-in-out;
+}
+
+.foot-grid-item {
+  height: 25px;
+  border: 1px solid #aaa;
+  background: rgba(123,123,123, 0.52);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+}
+.menu-header{
+  grid-column: 1 / span 2; /* Spans across the item and price columns */
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: white;
+}
+.menu-list{
+  grid-column: 1 / span 2; 
+  display: contents; 
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+}
+.menu-item{
+  display: contents;
+}
+/* --- STATE TRANSLATIONS (The Horizontal Slide) --- */
+
+#col-1:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c1)); }
+#col-2:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c2)); }
+#col-3:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c3)); }
+#col-4:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c4)); }
+#col-5:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c5)); }
+#col-6:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c6)); }
+#col-7:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c7)); }
+#col-8:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c8)); }
+#col-9:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c9)); }
+#col-10:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c10)); }
+/* --- TELEPORT HACK: Disable animation and apply fade --- */
+
+/* 1. CRITICAL FIX: Forces transition to NONE to prevent sliding across blank space */
+#col-10:checked ~ .controls-wrapper .teleport-btn[for="col-1"] ~ .grid-viewport .grid-container,
+#col-1:checked ~ .controls-wrapper .teleport-btn[for="col-10"] ~ .grid-viewport .grid-container {
+    transition: none !important; 
+}
+
+/* 2. Apply the fade animation to the viewport */
+#col-10:checked ~ .controls-wrapper .teleport-btn[for="col-1"] ~ .grid-viewport,
+#col-1:checked ~ .controls-wrapper .teleport-btn[for="col-10"] ~ .grid-viewport {
+    animation: flash-fade 0.5s forwards; 
+}
+
+
+/* --- DYNAMIC BUTTON LOGIC (Controls) --- */
+.controls-wrapper {
+    position: relative; 
+    width: 0; 
+    height: 0; 
+    margin: 0;
+}
+
+.state-controls {
+    display: none; 
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
+/* Show only the controls for the currently checked radio button */
+#col-1:checked ~ .controls-wrapper .state-1 { display: block; }
+#col-2:checked ~ .controls-wrapper .state-2 { display: block; }
+#col-3:checked ~ .controls-wrapper .state-3 { display: block; }
+#col-4:checked ~ .controls-wrapper .state-4 { display: block; }
+#col-5:checked ~ .controls-wrapper .state-5 { display: block; }
+#col-6:checked ~ .controls-wrapper .state-6 { display: block; }
+#col-7:checked ~ .controls-wrapper .state-7 { display: block; }
+#col-8:checked ~ .controls-wrapper .state-8 { display: block; }
+#col-9:checked ~ .controls-wrapper .state-9 { display: block; }
+#col-10:checked ~ .controls-wrapper .state-10 { display: block; }
+
+/* --- FIXED positioning for reliable visibility on the screen --- */
+.nav-button {
+    cursor: pointer;
+    padding: 1px 20px 8px 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    position: fixed; 
+    bottom: 4px;
+    
+    transition: background-color 0.2s;
+    user-select: none;
+    text-align: center;
+    width: 120px;
+    height: 10px;
+    z-index: 100;
+}
+.nav-button:hover { background-color: #2980b9; }
+
+.prev-btn { left: 35%; } 
+.next-btn { right: 35%; }
