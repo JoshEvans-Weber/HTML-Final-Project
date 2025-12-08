@@ -444,7 +444,7 @@ footer {
   
     /* --- Navigation Button Adjustment --- */
     .nav-button {
-        padding: 5px 10px 5px 10px; /* Smaller padding */
+        padding: 5px 20px 5px 20px; /* Smaller padding */
     }
     .prev-btn { left: 1%;
                 transform: translateY(-100%);}
