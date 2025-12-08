@@ -476,7 +476,7 @@ footer {
     }
     /* Page 4: Sides/Salads (The subcard page) */
     #col-4:checked ~ .grid-viewport { 
-        height: 2417.2px !important; 
+        height: 1897.8px !important; 
     }
     /* Page 5: Desserts */
     #col-5:checked ~ .grid-viewport { 
