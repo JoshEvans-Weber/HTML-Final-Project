@@ -290,6 +290,18 @@ display: block;
   justify-self: start;
   background-color: rgba(255, 255, 255, 0.4);
 }
+ /* Change map link font color to something easier to see */
+.grid-item-small-blk a {
+    color: #3498db;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.grid-item-small-blk a:hover {
+    color: #2ecc71;
+    text-decoration: none;
+}
 
 #col-1:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c1)); }
 #col-1:checked ~ .grid-viewport { 
