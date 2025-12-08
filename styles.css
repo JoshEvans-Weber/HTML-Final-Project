@@ -275,6 +275,7 @@ footer {
   justify-self: start;
   background-color: rgba(255, 255, 255, 0.4);
 }
+
 #col-1:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c1)); }
 #col-1:checked ~ .grid-viewport { 
     height: 1400px !important;
@@ -325,32 +326,19 @@ footer {
     animation: flash-fade 0.5s forwards; 
 }
 
-/*
+
 .controls-wrapper {
     position: relative; 
-    width: auto; 
-    height: auto; 
-    margin: 0 auto;
-} 
-*/
-
-.fixed-controls-wrapper {
-    position: fixed; /* Pin to the screen */
-    bottom: 0; 
-    width: var(--col-width); /* Constrain width to menu card size */
-    left: 0;
-    right: 0;
-    margin: 0 auto; /* Center the fixed container horizontally */
-    z-index: 100; 
-    /* Add Relative Positioning for children */
-    position: relative; 
+    width: 0; 
+    height: 0; 
+    margin: 0;
 }
 
 .state-controls {
     display: none; 
-    position: relative; /* Use relative positioning to contain absolute children */
-    width: 100%; /* Take up the full width of the fixed parent */
-    height: 100px; /* Give it a fixed height to force visibility and positioning */
+    position: relative;
+    width: 0;
+    height: 0;
 }
 
 #col-1:checked ~ .controls-wrapper .state-1 { display: block; }
@@ -365,26 +353,23 @@ footer {
 #col-10:checked ~ .controls-wrapper .state-10 { display: block; }
 
 .nav-button {
-    cursor: pointer;
-    padding: 1px 20px 2px 20px;
-    background-color: #3498db;
-    color: white;
-    border-radius: 4px;
-position: absolute; /* Relative to .fixed-controls-wrapper */
-    /* REMOVE bottom: 45px; as this will be controlled by parent structure now */
-    transition: background-color 0.2s;
-    user-select: none;
-    text-align: center;
-    z-index: 100;
+    cursor: pointer;
+    padding: 1px 20px 2px 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    position: fixed; 
+    bottom: 2.5px;
+    justify-self: start;
+    transition: background-color 0.2s;
+    user-select: none;
+    text-align: center;
+    z-index: 100;
 }
-
-/* Positioning relative to the wrapper edges */
-.prev-btn { left: 0; right: auto; } 
-.next-btn { right: 0; left: auto; }
 .nav-button:hover { background-color: #2980b9; }
 
-.prev-btn { left: 5px; right: auto; } 
-.next-btn { right: 5px; left: auto; }
+.prev-btn { left: 33.5%; } 
+.next-btn { right: 33.5%; }
 .head-left { center; }
 .head-center { center; }
 .head-right { center; }
@@ -440,7 +425,7 @@ position: absolute; /* Relative to .fixed-controls-wrapper */
 @media (max-width: 480px) {
     /* --- Global Resizing --- */
     :root {
-        --col-width: 90vw; /* Use 90% of the viewport width for better fit */
+        --col-width: 90vw; /* Use 90% of the viewport width*/
     }
 
     /* --- General Text Sizing --- */
@@ -449,7 +434,7 @@ position: absolute; /* Relative to .fixed-controls-wrapper */
         padding: 10px;
     }
     .grid-item-small-blk, .menu-item, .menu-item-name {
-        font-size: 0.9rem; /* Smaller menu text
+        font-size: 0.9rem; /* Smaller menu text */
     }
     .menu-header {
         font-size: 3rem;
@@ -458,18 +443,11 @@ position: absolute; /* Relative to .fixed-controls-wrapper */
   
   
     /* --- Navigation Button Adjustment --- */
-/* Ensure the wrapper uses the mobile width */
-    .fixed-controls-wrapper {
-        width: 90vw; 
+    .nav-button {
+        padding: 5px 10px 5px 10px; /* Smaller padding */
     }
-    
-    /* Navigation Button Adjustment (Relative to the 90vw wrapper) */
-    .prev-btn { 
-        left: 0; /* Align to the left edge of the 90vw wrapper */
-        right: auto !important;
-    }
-    .next-btn { 
-        right: 0; /* Align to the right edge of the 90vw wrapper */
-        left: auto !important;
-    }
+    .prev-btn { left: 75%;
+                transform: translateX(-100%);}
+    .next-btn { right: 50%;
+                transform: translateX(0);}
 }
