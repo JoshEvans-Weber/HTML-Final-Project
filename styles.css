@@ -446,6 +446,19 @@ footer {
         height: 600px !important; 
     }
 
+    .subcard {
+        grid-template-columns: 1fr !important;
+        padding: 10px;
+    }
+    .subcard > .menu-header {
+        grid-row: 1; /* Place the header first */
+        margin-top: 0; /* Clear margin if needed */
+        margin-bottom: 10px; /* Add separation below the header */
+    }
+    .subcard > .bulletless.menu-list {
+        grid-row: 2; /* Place the menu list second */
+    }
+
     /* --- Navigation Button Adjustment --- */
     .prev-btn { left: 33%; }
     .next-btn { right: 33%; }
