@@ -439,7 +439,9 @@ footer {
     .menu-header {
         font-size: 2rem;
     }
-
+    .foot-grid-item {
+        font-size: .75rem;
+    }
   
   
     /* --- Navigation Button Adjustment --- */
