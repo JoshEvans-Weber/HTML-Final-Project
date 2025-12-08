@@ -275,17 +275,6 @@ footer {
   justify-self: start;
   background-color: rgba(255, 255, 255, 0.4);
 }
-.fixed-controls-wrapper {
-    position: fixed;
-    bottom: 0; /* Keep it pinned to the bottom */
-    width: var(--col-width); /* Constrain its width to the menu card size */
-    left: 0;
-    right: 0;
-    margin: 0 auto; /* This centers the fixed-width container */
-    z-index: 100; /* Must be high to sit above footer */
-}
-
-
 #col-1:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c1)); }
 #col-1:checked ~ .grid-viewport { 
     height: 1400px !important;
@@ -344,6 +333,16 @@ footer {
     margin: 0;
 }
 
+.fixed-controls-wrapper {
+    position: fixed;
+    bottom: 0; /* Keep it pinned to the bottom */
+    width: var(--col-width); /* Constrain its width to the menu card size */
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* This centers the fixed-width container */
+    z-index: 100; /* Must be high to sit above footer */
+}
+
 .state-controls {
     display: none; 
     position: relative;
@@ -363,18 +362,19 @@ footer {
 #col-10:checked ~ .controls-wrapper .state-10 { display: block; }
 
 .nav-button {
-    cursor: pointer;
-    padding: 1px 20px 2px 20px;
-    background-color: #3498db;
-    color: white;
-    border-radius: 4px;
-    position: fixed; 
-    bottom: 2.5px;
-    justify-self: start;
-    transition: background-color 0.2s;
-    user-select: none;
-    text-align: center;
-    z-index: 100;
+    cursor: pointer;
+    padding: 1px 20px 2px 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    /* REMOVE position: fixed; and bottom: 2.5px; */
+    position: absolute; /* Changed to absolute to position relative to the wrapper */
+    bottom: 45px; /* Use the raised position here by default */
+    justify-self: start;
+    transition: background-color 0.2s;
+    user-select: none;
+    text-align: center;
+    z-index: 100;
 }
 .nav-button:hover { background-color: #2980b9; }
 
