@@ -347,6 +347,11 @@ display: block;
     font-weight: bold;
     transition: color 0.2s;
 }
+/* Style for div to prevent symantic issues with nested lists inside list items. */
+.sub-list-wrapper {
+    margin: 0;
+    padding: 0;
+}
 
 .grid-item-small-blk a:hover {
     color: #2ecc71;
