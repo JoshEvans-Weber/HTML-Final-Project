@@ -149,6 +149,7 @@ footer {
   height: auto;
 }
 .grid-item-small {
+  width: var(--col-width);
   height: var(--row-height);
   border: 1px solid #aaa;
   border-radius: 20px 20px 20px 20px;
