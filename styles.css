@@ -812,6 +812,27 @@ footer {
     transform: translateX(-75%); /* Show Slide 4 */
 }
 
+/* --- Dot Styles (Make controls visible) --- */
+
+.review-carousel-nav {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.rev-nav-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #aaa; /* Gray dot color */
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
 /* 2. Highlight the active dot (Ensure to include the new dots 3 and 4) */
 #rev-img-1:checked ~ .review-carousel-nav label[for="rev-img-1"],
 #rev-img-2:checked ~ .review-carousel-nav label[for="rev-img-2"],
