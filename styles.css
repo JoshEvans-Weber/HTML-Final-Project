@@ -23,8 +23,6 @@
   --common-border: 1px solid #aaa;
   --common-blur-filter: blur(6.1px);
   --common-font-color: white;
-
-  /* Dedicated background for fixed footer for visual distinction */
   --footer-bg-color: rgba(100, 100, 100, 0.7);
 }
 
@@ -288,7 +286,7 @@ footer {
 
 /* Common style for Header and Footer Grid Structure */
 .grid-header,
-.three-column-grid { /* <-- **UPDATED to .three-column-grid** */
+.grid-footer {
   display: grid;
   grid-template-columns: repeat(3, 33.33333%);
   grid-template-rows: repeat(1, 30px);
@@ -560,7 +558,6 @@ footer {
 
 /* --- Header (Fixed at Top with high Z-index) --- */
 .grid-header {
-  /* FIX: Ensure the header is full width and fixed to the top */
   position: fixed;
   top: 0; 
   width: 100%;
