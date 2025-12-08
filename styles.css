@@ -157,6 +157,7 @@ footer {
   background: rgba(0, 0, 0, 0.52); /* Specific background overrides mixin */
   font-size: 4rem;
   padding: 20px;
+  text-align: center;
   /* Uses mixin styles */
   @extend .blur-bg-mixin;
   @extend .grid-flex-mixin;
