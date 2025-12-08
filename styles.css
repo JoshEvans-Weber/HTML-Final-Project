@@ -39,6 +39,11 @@ input[type="radio"] { display: none; }
     60% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+nav{
+  text-decoration: none
+  font-weight: bold;
+}
 h1 {
   padding: 10px 20px;
   backdrop-filter: blur(6.1px);
