@@ -6,13 +6,12 @@
   --total-pages: 10;
   --transition-speed: 0.5s;
   
-  /* CRITICAL FIX: Shifts are now multiples of the single column width (200px) */
   --shift-c1: 0px; 
-  --shift-c2: calc(-1 * var(--col-width));   /* Shift 1 column */
-  --shift-c3: calc(-2 * var(--col-width));   /* Shift 2 columns */
-  --shift-c4: calc(-3 * var(--col-width));   /* Shift 3 columns */
-  --shift-c5: calc(-4 * var(--col-width));   /* Shift 4 columns */
-  --shift-c6: calc(-5 * var(--col-width));   /* Shift 5 columns */
+  --shift-c2: calc(-1 * var(--col-width));   
+  --shift-c3: calc(-2 * var(--col-width));   
+  --shift-c4: calc(-3 * var(--col-width));   
+  --shift-c5: calc(-4 * var(--col-width));   
+  --shift-c6: calc(-5 * var(--col-width));   
   --shift-c7: calc(-6* var(--col-width)); 
   --shift-c8: calc(-7 * var(--col-width)); 
   --shift-c9: calc(-8 * var(--col-width)); 
@@ -69,7 +68,7 @@ footer {
 /* --- Grid and Viewport Setup --- */
 .grid-viewport {
   width: var(--col-width); 
-  height: calc(var(--cards-per-page) * var(--row-height));
+  height: auto;
   overflow: hidden;
   margin: 20px auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -89,14 +88,13 @@ footer {
   border: 1px solid #aaa;
   border-radius: 20px 50px 20px 50px;
   background: rgba(123,123,123, 0.52);
-  display: flex;
   justify-content: center;
   font-size: 1.2rem;
   font-weight: bold;
   backdrop-filter: blur(6.1px);
   -webkit-backdrop-filter: blur(6.1px);
   display: grid;
-  grid-template-rows: 1 auto;
+  grid-template-rows: 1fr auto;
   align-items: start;
 }
 
@@ -118,6 +116,19 @@ footer {
   font-size: 1rem;
   backdrop-filter: blur(6.1px);
   -webkit-backdrop-filter: blur(6.1px);
+}
+.subcard{
+  border: 1px solid #aaa;
+  border-radius: 20px 50px 20px 50px;
+  background: rgba(123,123,123, 0.52);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  padding: 20px;
+  overflow-y: auto;
+
 }
 .menu-header{
   text-align: center;
@@ -155,12 +166,37 @@ footer {
   justify-self: start;
   background-color: rgba(255, 255, 255, 0.4);
 }
-/* --- STATE TRANSLATIONS (The Horizontal Slide) --- */
 
 #col-1:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c1)); }
+#col-1:checked ~ .grid-viewport { 
+    height: auto !important;
+}
 #col-2:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c2)); }
+#col-2:checked ~ .grid-viewport { 
+    height: auto !important;
+}
 #col-3:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c3)); }
+#col-3:checked ~ .grid-viewport { 
+    height: auto !important;
+}
 #col-4:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c4)); }
+#col-4:checked ~ .grid-viewport { 
+    height: auto !important;
+}
+#col-4:checked ~ .grid-viewport .grid-container > .grid-item:nth-child(4) {
+    display: grid !important; 
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(2, 1fr) !important; /* Two equally sized rows */
+    background: transparent;
+    border: none;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    align-items: start;
+    gap: 10px;
+}
+#col-4:checked ~ .grid-viewport {
+    height: auto; 
+}
 #col-5:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c5)); }
 #col-6:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c6)); }
 #col-7:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c7)); }
@@ -182,7 +218,6 @@ footer {
 }
 
 
-/* --- DYNAMIC BUTTON LOGIC (Controls) --- */
 .controls-wrapper {
     position: relative; 
     width: 0; 
@@ -197,7 +232,6 @@ footer {
     height: 0;
 }
 
-/* Show only the controls for the currently checked radio button */
 #col-1:checked ~ .controls-wrapper .state-1 { display: block; }
 #col-2:checked ~ .controls-wrapper .state-2 { display: block; }
 #col-3:checked ~ .controls-wrapper .state-3 { display: block; }
@@ -209,15 +243,14 @@ footer {
 #col-9:checked ~ .controls-wrapper .state-9 { display: block; }
 #col-10:checked ~ .controls-wrapper .state-10 { display: block; }
 
-/* --- FIXED positioning for reliable visibility on the screen --- */
 .nav-button {
     cursor: pointer;
-    padding: 1px 20px 8px 20px;
+    padding: 1px 20px 2px 20px;
     background-color: #3498db;
     color: white;
     border-radius: 4px;
     position: fixed; 
-    bottom: 1px;
+    bottom: 2.5px;
     justify-self: start;
     transition: background-color 0.2s;
     user-select: none;
