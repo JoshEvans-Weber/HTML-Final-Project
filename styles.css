@@ -291,18 +291,15 @@ footer {
   grid-template-columns: repeat(3, 33.33333%);
   grid-template-rows: repeat(1, 30px);
   grid-auto-flow: column;
-  transition: transform var(--transition-speed) ease-in-out;
 }
 
 /* Common style for Header and Footer Grid Items */
 .head-grid-item,
 .foot-grid-item {
   height: 25px;
-  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  /* Original Styles - Blur */
   backdrop-filter: var(--common-blur-filter);
   -webkit-backdrop-filter: var(--common-blur-filter);
   background: var(--common-bg-color);
@@ -321,7 +318,6 @@ footer {
   align-items: start;
   padding: 20px;
   overflow-y: auto;
-  /* Original Styles - Blur */
   backdrop-filter: var(--common-blur-filter);
   -webkit-backdrop-filter: var(--common-blur-filter);
   background: var(--common-bg-color);
