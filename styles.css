@@ -280,19 +280,19 @@ footer {
 
 #col-1:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c1)); }
 #col-1:checked ~ .grid-viewport { 
-    height: 1400px !important;
+    height: 1396px !important;
 }
 #col-2:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c2)); }
 #col-2:checked ~ .grid-viewport { 
-    height: 1100px !important;
+    height: 1093.2px !important;
 }
 #col-3:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c3)); }
 #col-3:checked ~ .grid-viewport { 
-    height: 1125px !important;
+    height: 1117.6px !important;
 }
 #col-4:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c4)); }
 #col-4:checked ~ .grid-viewport { 
-    height: 1625px !important;
+    height: 2069.4px !important;
 }
 #col-4:checked ~ .grid-viewport .grid-container > .grid-item:nth-child(4) {
     display: grid !important; 
@@ -305,13 +305,22 @@ footer {
     align-items: start;
     gap: 10px;
 }
-#col-4:checked ~ .grid-viewport {
-    height: auto; 
-}
 #col-5:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c5)); }
+#col-5:checked ~ .grid-viewport { 
+    height: 941.6px !important;
+}
 #col-6:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c6)); }
+#col-6:checked ~ .grid-viewport { 
+    height: 1025.64px !important;
+}
 #col-7:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c7)); }
+#col-7:checked ~ .grid-viewport { 
+    height: 747.2px !important;
+}
 #col-8:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c8)); }
+#col-8:checked ~ .grid-viewport { 
+    height: 450.4px !important;
+}
 #col-9:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c9)); }
 #col-10:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c10)); }
 /* --- TELEPORT HACK: Disable animation and apply fade --- */
@@ -400,29 +409,35 @@ footer {
     }
     /* Page 1: Wine */
     #col-1:checked ~ .grid-viewport { 
-        height: 1415px !important; 
+        height: 1414.4px !important; 
     }
     /* Page 2: Appetizers */
     #col-2:checked ~ .grid-viewport { 
-        height: 1160px !important; 
+        height: 1148.4px !important; 
     }
     /* Page 3: Entrees */
     #col-3:checked ~ .grid-viewport { 
-        height: 1205px !important; 
+        height: 1172.8px !important; 
     }
     /* Page 4: Sides/Salads (The subcard page) */
     #col-4:checked ~ .grid-viewport { 
-        height: 1870px !important; 
+        height: 2327px !important; 
     }
     /* Page 5: Desserts */
     #col-5:checked ~ .grid-viewport { 
-        height: 975px !important; 
+        height: 960px !important; 
     }
     
     /* Set reasonable default heights for the rest of the cards */
-    #col-6:checked ~ .grid-viewport,
-    #col-7:checked ~ .grid-viewport,
-    #col-8:checked ~ .grid-viewport,
+      #col-6:checked ~ .grid-viewport { 
+        height: 1099.4px !important; 
+    }
+      #col-7:checked ~ .grid-viewport { 
+        height: 784px !important; 
+    }
+      #col-8:checked ~ .grid-viewport { 
+        height: 450.4px !important; 
+    }
     #col-9:checked ~ .grid-viewport,
     #col-10:checked ~ .grid-viewport { 
         height: 600px !important; 
@@ -449,29 +464,35 @@ footer {
 
       /* Page 1: Wine */
     #col-1:checked ~ .grid-viewport { 
-        height: 1700px !important; 
+        height: 1561.6px !important; 
     }
     /* Page 2: Appetizers */
     #col-2:checked ~ .grid-viewport { 
-        height: 1300px !important; 
+        height: 1258.8px !important; 
     }
     /* Page 3: Entrees */
     #col-3:checked ~ .grid-viewport { 
-        height: 1300px !important; 
+        height: 1228px !important; 
     }
     /* Page 4: Sides/Salads (The subcard page) */
     #col-4:checked ~ .grid-viewport { 
-        height: 2000px !important; 
+        height: 2417.2px !important; 
     }
     /* Page 5: Desserts */
     #col-5:checked ~ .grid-viewport { 
-        height: 1050px !important; 
+        height: 1052px !important; 
     }
     
     /* Set reasonable default heights for the rest of the cards */
-    #col-6:checked ~ .grid-viewport,
-    #col-7:checked ~ .grid-viewport,
-    #col-8:checked ~ .grid-viewport,
+    #col-6:checked ~ .grid-viewport{ 
+        height: 1191.2px !important; 
+    }
+    #col-7:checked ~ .grid-viewport{ 
+        height: 820.8px !important; 
+    }
+    #col-8:checked ~ .grid-viewport{ 
+        height: 468.8px !important; 
+    }
     #col-9:checked ~ .grid-viewport,
     #col-10:checked ~ .grid-viewport { 
         height: 600px !important; 
@@ -519,29 +540,35 @@ footer {
   
     /* Page 1: Wine */
     #col-1:checked ~ .grid-viewport { 
-        height: 2100px !important; 
+        height: 2012.8px !important; 
     }
     /* Page 2: Appetizers */
     #col-2:checked ~ .grid-viewport { 
-        height: 1700px !important; 
+        height: 1538px !important; 
     }
     /* Page 3: Entrees */
     #col-3:checked ~ .grid-viewport { 
-        height: 1800px !important; 
+        height: 1623.2px !important; 
     }
     /* Page 4: Sides/Salads (The subcard page) */
     #col-4:checked ~ .grid-viewport { 
-        height: 2900px !important; 
+        height: 2478.6px !important; 
     }
     /* Page 5: Desserts */
     #col-5:checked ~ .grid-viewport { 
-        height: 1500px !important; 
+        height: 1369.6px !important; 
     }
     
     /* Set reasonable default heights for the rest of the cards */
-    #col-6:checked ~ .grid-viewport,
-    #col-7:checked ~ .grid-viewport,
-    #col-8:checked ~ .grid-viewport,
+    #col-6:checked ~ .grid-viewport{ 
+        height: 1455.2px !important; 
+    }
+    #col-7:checked ~ .grid-viewport{ 
+        height: 998.4px !important; 
+    }
+    #col-8:checked ~ .grid-viewport{ 
+        height: 524.8px !important; 
+    }
     #col-9:checked ~ .grid-viewport,
     #col-10:checked ~ .grid-viewport { 
         height: 600px !important; 
