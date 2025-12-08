@@ -446,6 +446,6 @@ footer {
     .nav-button {
         padding: 5px 10px 5px 10px; /* Smaller padding */
     }
-    .prev-btn { bottom: 5%;}
-    .next-btn { right: 5%;}
+    .prev-btn { left: 10px;}
+    .next-btn { right: 10px;}
 }
