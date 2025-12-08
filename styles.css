@@ -275,6 +275,16 @@ footer {
   justify-self: start;
   background-color: rgba(255, 255, 255, 0.4);
 }
+.fixed-controls-wrapper {
+    position: fixed;
+    bottom: 0; /* Keep it pinned to the bottom */
+    width: var(--col-width); /* Constrain its width to the menu card size */
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* This centers the fixed-width container */
+    z-index: 100; /* Must be high to sit above footer */
+}
+
 
 #col-1:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c1)); }
 #col-1:checked ~ .grid-viewport { 
