@@ -288,7 +288,7 @@ footer {
 
 /* Common style for Header and Footer Grid Structure */
 .grid-header,
-.three-column-grid { /* <-- UPDATED to .three-column-grid */
+.three-column-grid { /* <-- **UPDATED to .three-column-grid** */
   display: grid;
   grid-template-columns: repeat(3, 33.33333%);
   grid-template-rows: repeat(1, 30px);
@@ -560,11 +560,22 @@ footer {
 
 /* --- Header (Fixed at Top with high Z-index) --- */
 .grid-header {
-  justify-self: end;
+  /* FIX: Ensure the header is full width and fixed to the top */
   position: fixed;
-  top: 0px;
+  top: 0; 
   width: 100%;
   z-index: 100;
+  
+  /* Styling inherited from footer for consistent look */
+  backdrop-filter: var(--common-blur-filter);
+  -webkit-backdrop-filter: var(--common-blur-filter);
+  background: var(--footer-bg-color);
+  padding: 10px 0; 
+
+  /* Ensure the navigation bar content is centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -761,7 +772,7 @@ footer {
     right: 1%;
     transform: translateY(-100%);
   }
-} /* <-- THE MISSING CLOSING BRACE WAS ADDED HERE */
+} 
 
 
 /* --- Contact Form Styles --- */
