@@ -719,3 +719,102 @@ footer {
     background-color: #d35400;
     transform: translateY(-1px);
 }
+
+/* --- Mini-Carousel Structure (Review Page) --- */
+
+.review-carousel-wrapper {
+    position: relative;
+    overflow: hidden; /* Hides the slides that are off-screen */
+    width: 90%; 
+    max-height: 550px; /* Adjust height based on your tallest review content */
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3); /* Subtle background for the carousel box */
+    padding-bottom: 30px; /* Space for the navigation dots */
+}
+
+.review-carousel-track {
+    display: flex;
+    /* Since we have 2 slides in the HTML example, the width is 200% */
+    width: 200%; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-slide {
+    width: 50%; /* Each slide takes up 50% of the 200% track, meaning 100% of the wrapper */
+    flex-shrink: 0; /* Prevents slides from shrinking */
+    padding: 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Content Styling --- */
+
+.review-slide h3 {
+    color: #e67e22; /* Warm color for review title */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.review-slide img {
+    max-width: 90%;
+    max-height: 250px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #f7f7f7;
+}
+
+.review-text {
+    color: #f7f7f7;
+    font-style: italic;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* --- Carousel Navigation Logic for Reviews Page --- */
+
+/* Hide the radio buttons used for control */
+#rev-img-1,
+#rev-img-2 {
+    display: none;
+}
+
+/* 1. Define the horizontal shift when each radio button is checked (2 slides = 50% shift) */
+#rev-img-1:checked ~ .review-carousel-track { 
+    transform: translateX(0); /* Show Slide 1 */
+}
+#rev-img-2:checked ~ .review-carousel-track { 
+    transform: translateX(-50%); /* Show Slide 2 */
+}
+
+/* Dots and Highlight */
+.review-carousel-nav {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.rev-nav-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #aaa;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* 2. Highlight the active dot */
+#rev-img-1:checked ~ .review-carousel-nav label[for="rev-img-1"],
+#rev-img-2:checked ~ .review-carousel-nav label[for="rev-img-2"] {
+    background-color: #2ecc71; /* Green highlight for the active review */
+    transform: scale(1.2);
+}
