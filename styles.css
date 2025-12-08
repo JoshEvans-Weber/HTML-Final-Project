@@ -444,9 +444,8 @@ footer {
   
     /* --- Navigation Button Adjustment --- */
     .nav-button {
-        bottom: 100px;
         padding: 5px 10px 5px 10px; /* Smaller padding */
     }
-    .prev-btn { left: 2%;}
-    .next-btn { right: 2%;}
+    .prev-btn { bottom: 5%;}
+    .next-btn { right: 5%;}
 }
