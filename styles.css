@@ -1,315 +1,338 @@
-<!DOCTYPE html>
-<html lang="en">
+/* --- Global Variables & Keyframes --- */
+:root {
+  --col-width: 1200px; 
+  --row-height: auto;
+  --cards-per-page: 1;
+  --total-pages: 10;
+  --transition-speed: 0.5s;
+  
+  --shift-c1: 0px; 
+  --shift-c2: calc(-1 * var(--col-width));   
+  --shift-c3: calc(-2 * var(--col-width));   
+  --shift-c4: calc(-3 * var(--col-width));   
+  --shift-c5: calc(-4 * var(--col-width));   
+  --shift-c6: calc(-5 * var(--col-width));   
+  --shift-c7: calc(-6* var(--col-width)); 
+  --shift-c8: calc(-7 * var(--col-width)); 
+  --shift-c9: calc(-8 * var(--col-width)); 
+  --shift-c10: calc(-9 * var(--col-width)); 
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Final Project for HTML class</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    background-image: url('https://images.unsplash.com/photo-1698133466726-b8c778a8cc4b?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NjUwODQyMDh8&ixlib=rb-4.1.0&q=85');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-color: #f4f4f4;
+}
 
-<body>
-  <!-- Top level header -->
-  <div class="grid-item-title">
-    <div class="grid-item-title-blk">Seven Seas Bar and Grill </div>
-    </div>
-  <hr>
-  <div class="grid-item-small">
-  <p class="grid-item-small-blk">Nestled in the bustling downtown Ogden Utah,
-    we've been serving delicious carribean food since 2013. </p>
-    <img src="https://drive.google.com/uc?export=view&id=1V9IIFB_hhOnIti0gJzG0jLEEGMf7WB1Q" alt="Seven Seas Bar">
-  </div>
-  <!-- Radio Buttons for single webpage card navigation -->
-  <input type="radio" id="col-1" name="grid-control">
-  <input type="radio" id="col-2" name="grid-control">
-  <input type="radio" id="col-3" name="grid-control">
-  <input type="radio" id="col-4" name="grid-control"checked>
-  <input type="radio" id="col-5" name="grid-control">
-  <input type="radio" id="col-6" name="grid-control">
-  <input type="radio" id="col-7" name="grid-control">
-  <input type="radio" id="col-8" name="grid-control">
-  <input type="radio" id="col-9" name="grid-control">
-  <input type="radio" id="col-10" name="grid-control">
-  <!-- Card Navigation Buttons Using the above radio buttons -->
-  <div class="controls-wrapper">
-    <div class="state-controls state-1">
-      <label class="nav-button prev-btn teleport-btn" for="col-10">1 Loop ←</label>
-      <label class="nav-button next-btn" for="col-2">Appetizers</label>
-    </div>
-    <div class="state-controls state-2">
-      <label class="nav-button prev-btn" for="col-1">Wine</label>
-      <label class="nav-button next-btn" for="col-3">Entrees</label>
-    </div>
-    <div class="state-controls state-3">
-      <label class="nav-button prev-btn" for="col-2">Appetizers</label>
-      <label class="nav-button next-btn" for="col-4">Sides / Salads</label>
-    </div>
-    <div class="state-controls state-4">
-      <label class="nav-button prev-btn" for="col-3">Entrees</label>
-      <label class="nav-button next-btn" for="col-5">4 Next →</label>
-    </div>
-    <div class="state-controls state-5">
-      <label class="nav-button prev-btn" for="col-4">5 ← Previous </label>
-      <label class="nav-button next-btn teleport-btn" for="col-6">5 Next →</label>
-    </div>
-    <div class="state-controls state-6">
-      <label class="nav-button prev-btn" for="col-5">6 ← Previous </label>
-      <label class="nav-button next-btn teleport-btn" for="col-7">6 Next →</label>
-    </div>
-    <div class="state-controls state-7">
-      <label class="nav-button prev-btn" for="col-6">7 ← Previous </label>
-      <label class="nav-button next-btn teleport-btn" for="col-8">7 Next →</label>
-    </div>
-    <div class="state-controls state-8">
-      <label class="nav-button prev-btn" for="col-7">8 ← Previous </label>
-      <label class="nav-button next-btn teleport-btn" for="col-9">8 Next →</label>
-    </div>
-    <div class="state-controls state-9">
-      <label class="nav-button prev-btn" for="col-8">9 ← Previous </label>
-      <label class="nav-button next-btn teleport-btn" for="col-10">9 Next →</label>
-    </div>
-    <div class="state-controls state-10">
-      <label class="nav-button prev-btn" for="col-9">10 ← Previous </label>
-      <label class="nav-button next-btn teleport-btn" for="col-1">10 Next →</label>
-    </div>
-  </div>
+input[type="radio"] { display: none; }
 
-  <!-- Define and attach cards to viewport -->
-  <div class="grid-viewport">
-    <div class="grid-container">
-      <!-- Card 1 -->
-      <div class="grid-item">
-        <div class="menu-header">Wine</div>
-        <ul class="bulletless menu-list">
-          <li class="menu-item-name">Prosecco</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">A lively Italian sparkler with crisp green apple and honeydew melon flavors. Its light bubbles and clean finish are the perfect palate cleanser.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 7$ / 32$</li>
-          </ul>
-          <li class="menu-item-name">Crémant d'Alsace</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Elegant and refined, offering rich notes of strawberry, pear, and brioche. A creamy texture with a zesty backbone that stands up to richer seafood.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 6$ / 30$</li>
-          </ul>
-          <li class="menu-item-name">Rosé de Provence</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">The quintessential dry rosé. Pale pink with delicate aromas of strawberry, citrus zest, and white peach. refreshing and bone-dry.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 9$ / 36$</li>
-          </ul>
-          <li class="menu-item-name">Riesling</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Aromatic and intense, featuring electric acidity balanced by a touch of natural sweetness. Look for notes of lime, apricot, and honeycomb.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 5$ / 28$</li>
-          </ul>
-          <li class="menu-item-name">Albariño </li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">"Sunshine in a glass." Zesty and saline, with mouth-watering flavors of grapefruit, nectarine, and sea spray. Ideally suited for anything from the ocean.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 8$ / 38$</li>
-          </ul>
-          <li class="menu-item-name">Sauvignon Blanc </li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Punchy and herbaceous, exploding with passion fruit, guava, and fresh cut grass. A high-energy wine that matches the vibrancy of Caribbean salsas.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 7$ / 32$</li>
-          </ul>
-          <li class="menu-item-name">Viognier </li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Lush and full-bodied, with exotic perfumes of tangerine, peach, and honeysuckle. Its oily texture coats the palate, making it great for creamy sauces.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 9$ / 36$</li>
-          </ul>
-          <li class="menu-item-name">Grüner Veltliner </li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">A savory and thirst-quenching white with signature notes of white pepper, green apple, and citrus. Versatile and food-friendly.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 5$ / 28$</li>
-          </ul>
-        </ul>
-      </div>
-      <!-- Card 2 -->
-      <div class="grid-item">
-        <div class="menu-header">Appetizers</div>
-        <ul class="bulletless menu-list">
-          <li class="menu-item-name">Bajan Fish Cakes</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Crispy, savory fritters made with flaked salt cod, herbs, and a hint of fiery scotch bonnet pepper. Served with a cool mango dipping sauce.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 12$ App / 18$ Entree</li>
-          </ul>
-          <li class="menu-item-name">Jamaican Beef Patties</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Flaky, turmeric-infused pastry shell filled with savory, seasoned ground beef. Baked until golden brown and served hot.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 12$ / 18$ Entree</li>
-          </ul>
-          <li class="menu-item-name">Conch Ceviche</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Tender conch marinated in fresh lime, orange, cilantro, red onion, and bell peppers. Served chilled with crispy plantain chips.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 19$ App / 23$ Entree</li>
-          </ul>
-          <li class="menu-item-name">Tostones with Garlic-Cilantro Mojo</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Smashed, double-fried green plantains, seasoned with sea salt. Served with a vibrant dipping sauce of fresh garlic, cilantro, and lime juice.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 12$ App / 15$ Entree</li>
-          </ul>
-          <li class="menu-item-name">Chipotle-Glazed Jerk Skewers</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Marinated chicken thigh pieces, grilled and brushed with a smoky, spicy-sweet glaze. Served over a bed of fresh greens.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 18$ App / 24$ Entree</li>
-          </ul>
-          <li class="menu-item-name">Sweet Plantain Bites (Maduros)</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Caramelized sweet plantains wrapped in bacon, drizzled with aged rum reduction. A perfect savory-sweet indulgence.</li>
-            <hr>
-            <li class="bulletless menu-price">Chef's recommendation</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 12$ App / 15$ Entree</li>
-          </ul>
-        </ul>
-      </div>
-      <!-- Card 3 (home card) -->
-            <div class="grid-item">
-        <div class="menu-header">Entrées</div>
-        <ul class="bulletless menu-list">
-          <li class="menu-item-name">Jamaican Jerk Chicken</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Bone-in chicken leg and thigh, slow-smoked over pimento wood and marinated in a fiery blend of scallions, ginger, and scotch bonnet peppers. Served with rice and peas.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 24$</li>
-          </ul>
-          <li class="menu-item-name">Curry Goat (Griot Style)</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Tender chunks of goat meat stewed in a rich, complex curry sauce featuring turmeric, cumin, and thyme. Served with roti bread or steamed rice.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 32$</li>
-          </ul>
-          <li class="menu-item-name">Trinidadian Pelau</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">A comforting one-pot dish of chicken, pigeon peas, and rice, colored and flavored by browning the meat in caramelized sugar. Finished with creamy coconut milk.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 24$</li>
-          </ul>
-          <li class="menu-item-name">Escovitch Whole Fried Snapper</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">A whole, fresh snapper fried until the skin is perfectly crisp, then topped with a vibrant pickled medley of carrots, onions, and bell peppers (the "Escovitch Sauce").</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 34$</li>
-          </ul>
-          <li class="menu-item-name">Classic Pepperpot Stew</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">A hearty, slow-simmered stew based on preserved meat (often beef or pork) and indigenous casareep (a caramelized cassava root sauce). Deep, dark, and intensely savory.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 29$</li>
-          </ul>
-          <li class="menu-item-name">Seafood Rundown (Run-Down)</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">A light and creamy stew of fresh market fish, shrimp, and vegetables simmered in reduced coconut milk until the sauce thickens and "runs down."</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 30$</li>
-          </ul>
-        </ul>
-      </div>
-      <!-- Card 4 -->
-      <div class="grid-item">
-         <!-- Card 4a -->
-        <div class="subcard">
-          <ul class="bulletless menu-list">
-          <li class="menu-item-name">Rice and Peas</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">A classic staple of long-grain rice slow-cooked with kidney beans (the "peas"), coconut milk, thyme, and scallions until perfectly fluffy.</li>
-            <hr>
-            <li class="bulletless menu-price-end">Price: 8$</li>
-          </ul>
-          <li class="menu-item-name">Steamed White Rice</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Simple, perfectly steamed long-grain rice, ideal for pairing with rich stews and curries.</li>
-            <hr>
-            <li class="bulletless menu-price-end">Price: 6$</li>
-          </ul>
-            <li class="menu-item-name">Fried Plantains (Maduros)</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Ripe, sweet plantains sliced and fried to achieve a caramelized exterior and soft, sweet interior. Essential for balancing spice.</li>
-            <hr>
-            <li class="bulletless menu-price-end">Price: 7$</li>
-            </ul>
-            <li class="menu-item-name">Dahl Puri Roti (Single)</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">A soft, thin flatbread layered with ground split peas, perfect for scooping up curries or wrapping savory fillings </li>
-            <hr>
-            <li class="bulletless menu-price-end">Price: 5$</li>
-            </ul>
-            <li class="menu-item-name">Macaroni Pie</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">A creamy, baked casserole similar to mac and cheese, seasoned with mustard and onion, and topped with breadcrumbs for a golden crust. A Trinidadian favorite.</li>
-            <hr>
-            <li class="bulletless menu-price-end">Price: 12$</li>
-            </ul>
-            <li class="menu-item-name">Steamed Callaloo</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Leafy greens (often similar to spinach or taro leaf) gently steamed with okra, coconut milk, and fresh herbs. A flavorful and healthy green side.</li>
-            <hr>
-            <li class="bulletless menu-price-end">Price: 9$</li>
-          </ul>
-            </ul>
-        <div class="menu-header"> :Sides </div>
-      </div>
-        <!-- Card 4b -->
-        <div class="subcard">
-          <div class="menu-header">Salads: </div>
-          <ul class="bulletless menu-list">
-          <li class="menu-item-name">Calypso Caesar Salad</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Crisp romaine, fried plantain croutons, shaved Parmesan, tossed in a light, creamy citrus dressing. Add Grilled Jerk Chicken for an additional $6.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 14$</li>
-          </ul>
-          <li class="menu-item-name">Tropical Greens Salad</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Mixed baby greens with mango, avocado, shaved red onion, cucumber, and toasted pumpkin seeds, finished with a tangy ginger-lime vinaigrette.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 16$</li>
-          </ul>
-            <li class="menu-item-name">Spicy Green Papaya Slaw</li>
-          <ul class="menu-list">
-            <li class="bulletless menu-item">Thinly shredded green papaya and carrot mixed with cilantro, lime, peanuts, and a light dressing that carries a mild scotch bonnet kick.</li>
-            <hr>
-            <li class="bulletless menu-price">Price: 12$</li>
-          </ul>
-        </ul>
-        </div>
-      </div>
-      <!-- Card 5 -->
-      <div class="grid-item">C2-R2</div>
-      <!-- Card 6 -->
-      <div class="grid-item">C2-R3</div>
-      <!-- Card 7 -->
-      <div class="grid-item">C3-R1</div>
-      <!-- Card 8 -->
-      <div class="grid-item">C3-R2</div>
-      <!-- Card 9 -->
-      <div class="grid-item">C3-R3</div>
-      <!-- Card 10 -->
-      <div class="grid-item">C4-R1</div>
-    </div>
-  </div>
-  <!-- viewport attached footer -->
-  <footer>
-    <div class="grid-footer">
-      <div class="foot-grid-item">Joshua Evans all rights reserved</div>
-      <div class="foot-grid-item"></div>
-      <div class="foot-grid-item">7Seas LTD.</div>
-    </div>
-  </footer>
-</body>
+@keyframes flash-fade {
+    0% { opacity: 1; }
+    40% { opacity: 0; }
+    60% { opacity: 0; }
+    100% { opacity: 1; }
+}
+h1 {
+  padding: 10px 20px;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 50px 50px;
+  background: rgba(123,123,123, 0.52);
+  color: white;
+}
+hr {
+  width: 80%;
+  background-color: rgba(124,124,124, 0.55);
+  border: none;
+}
+footer {
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  color: white;
+  position: fixed;
+  bottom:0;
+  width: 100%;
+  z-index: 15;
+}
+.bulletless {
+  list-style-type:none;
+}
+/* --- Grid and Viewport Setup --- */
+.grid-viewport {
+  width: var(--col-width); 
+  height: auto;
+  overflow: hidden;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-</html>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(var(--total-pages), var(--col-width));
+  grid-template-rows: repeat(var(--cards-per-page), var(--row-height));
+  grid-auto-flow: column;
+  transition: transform var(--transition-speed) ease-in-out;
+  align-items: start;
+}
+
+.grid-item {
+  height: var(--row-height);
+  border: 1px solid #aaa;
+  border-radius: 20px 50px 20px 50px;
+  background: rgba(123,123,123, 0.52);
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: start;
+}
+
+.grid-item-title {
+  color: white;
+  height: var(--row-height);
+  border: 1px solid #aaa;
+  border-radius: 20px 20px 20px 20px;
+  background: rgba(123,123,123, 0.52);
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: bold;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: start;
+  padding: 10px 20px 2px 20px;
+}
+
+.grid-item-title-blk {
+  color: white;
+  height: var(--row-height);
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 5px 5px;
+  background: rgba(0,0,0, 0.52);
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: bold;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: start;
+  padding: 20px 20px 20px 20px;
+}
+
+.grid-item-small {
+  height: var(--row-height);
+  border: 1px solid #aaa;
+  border-radius: 20px 20px 20px 20px;
+  background: rgba(123,123,123, 0.52);
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: start;
+  padding: 10px 20px 2px 20px;
+}
+.grid-item-small-blk {
+  color: white;
+  height: var(--row-height);
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 5px 5px;
+  background: rgba(0,0,0, 0.52);
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: start;
+  padding: 20px 20px 20px 20px;
+}
+
+.grid-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 33.33333%);
+  grid-template-rows: repeat(1, 30px));
+  grid-auto-flow: column;
+  transition: transform var(--transition-speed) ease-in-out;
+}
+
+.foot-grid-item {
+  height: 25px;
+  border: 1px solid #aaa;
+  background: rgba(123,123,123, 0.52);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+}
+.subcard{
+  border: 1px solid #aaa;
+  border-radius: 20px 50px 20px 50px;
+  background: rgba(123,123,123, 0.52);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  padding: 20px;
+  overflow-y: auto;
+
+}
+.menu-header{
+  text-align: center;
+  margin-top: 15px;
+  font-size: 5rem;
+  color: white;
+  align-items: bottom;
+}
+.menu-list{
+  padding: 5px 30px 15px 30px;
+}
+.menu-item-name{
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 20px 20px 20px 20px;
+  font-size: 1rem;
+  padding: 5px 5px 5px 5px;
+  justify-self: start;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.menu-item{
+  color: white;
+  align-items: top;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 20px 20px 20px 20px;
+  font-size: 1rem;
+  padding: 5px 60px 15px 20px;
+  justify-self: start;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.menu-price-end{
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px 20px 20px 20px;
+  font-size: 1rem;
+  padding: 5px 5px 5px 5px;
+  justify-self: end;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.menu-price{
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px 20px 20px 20px;
+  font-size: 1rem;
+  padding: 5px 5px 5px 5px;
+  justify-self: start;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#col-1:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c1)); }
+#col-1:checked ~ .grid-viewport { 
+    height: 1400px !important;
+}
+#col-2:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c2)); }
+#col-2:checked ~ .grid-viewport { 
+    height: 1100px !important;
+}
+#col-3:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c3)); }
+#col-3:checked ~ .grid-viewport { 
+    height: 1125px !important;
+}
+#col-4:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c4)); }
+#col-4:checked ~ .grid-viewport { 
+    height: 1625px !important;
+}
+#col-4:checked ~ .grid-viewport .grid-container > .grid-item:nth-child(4) {
+    display: grid !important; 
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(2, 1fr) !important; /* Two equally sized rows */
+    background: transparent;
+    border: none;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    align-items: start;
+    gap: 10px;
+}
+#col-4:checked ~ .grid-viewport {
+    height: auto; 
+}
+#col-5:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c5)); }
+#col-6:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c6)); }
+#col-7:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c7)); }
+#col-8:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c8)); }
+#col-9:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c9)); }
+#col-10:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c10)); }
+/* --- TELEPORT HACK: Disable animation and apply fade --- */
+
+/* 1. CRITICAL FIX: Forces transition to NONE to prevent sliding across blank space */
+#col-10:checked ~ .controls-wrapper .teleport-btn[for="col-1"] ~ .grid-viewport .grid-container,
+#col-1:checked ~ .controls-wrapper .teleport-btn[for="col-10"] ~ .grid-viewport .grid-container {
+    transition: none !important; 
+}
+
+/* 2. Apply the fade animation to the viewport */
+#col-10:checked ~ .controls-wrapper .teleport-btn[for="col-1"] ~ .grid-viewport,
+#col-1:checked ~ .controls-wrapper .teleport-btn[for="col-10"] ~ .grid-viewport {
+    animation: flash-fade 0.5s forwards; 
+}
 
 
+.controls-wrapper {
+    position: relative; 
+    width: 0; 
+    height: 0; 
+    margin: 0;
+}
+
+.state-controls {
+    display: none; 
+    position: relative;
+    width: 0;
+    height: 0;
+}
+
+#col-1:checked ~ .controls-wrapper .state-1 { display: block; }
+#col-2:checked ~ .controls-wrapper .state-2 { display: block; }
+#col-3:checked ~ .controls-wrapper .state-3 { display: block; }
+#col-4:checked ~ .controls-wrapper .state-4 { display: block; }
+#col-5:checked ~ .controls-wrapper .state-5 { display: block; }
+#col-6:checked ~ .controls-wrapper .state-6 { display: block; }
+#col-7:checked ~ .controls-wrapper .state-7 { display: block; }
+#col-8:checked ~ .controls-wrapper .state-8 { display: block; }
+#col-9:checked ~ .controls-wrapper .state-9 { display: block; }
+#col-10:checked ~ .controls-wrapper .state-10 { display: block; }
+
+.nav-button {
+    cursor: pointer;
+    padding: 1px 20px 2px 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    position: fixed; 
+    bottom: 2.5px;
+    justify-self: start;
+    transition: background-color 0.2s;
+    user-select: none;
+    text-align: center;
+    z-index: 100;
+}
+.nav-button:hover { background-color: #2980b9; }
+
+.prev-btn { left: 33.5%; } 
+.next-btn { right: 33.5%; }
