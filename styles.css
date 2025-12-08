@@ -346,8 +346,9 @@ footer {
 .state-controls {
     display: none; 
     position: relative;
-    width: auto;
-    height: auto;
+    width: 100%; /* The key change: allows the wrapper to take up space */
+    height: auto; 
+    /* The original width: 0; and height: 0; must be removed or overwritten */
 }
 
 #col-1:checked ~ .controls-wrapper .state-1 { display: block; }
