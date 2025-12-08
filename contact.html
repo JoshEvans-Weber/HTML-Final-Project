@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seven Seas Bar and Grill</title>
+  <title>Seven Seas Bar and Grill - Contact</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -13,65 +13,67 @@
     <nav class="head-grid-item"><a href="contact.html" class="nav-button head-center">Contact</a></nav>
     <nav class="head-grid-item"><a href="reviews.html" class="nav-button head-right">Reviews</a></nav>
   </header>
-  
-  <div class="grid-item-title">
-    <div class="grid-item-title-blk">Seven Seas Bar and Grill </div>
-    <img class="logoimg" src="https://github.com/JoshEvans-Weber/HTML-Final-Project/blob/main/logo-no-bg.png?raw=true" alt="Seven Seas Logo">
-  </div>
-  <hr>
 
-<input type="radio" id="col-1" name="grid-control" checked>
-<div class="grid-viewport" id="menu-top">
-    <div class="grid-container">
-      <div class="grid-item"> 
-        <div class="menu-header">Contact Us</div>
-        
-        <section class="contact-section">
-          <p class="form-intro">We'd love to hear from you. Fill out the form below and we'll get back to you within 24 hours.</p>
+  <main>
+    <div class="grid-item-title">
+      <div class="grid-item-title-blk">Seven Seas Bar and Grill</div>
+      <img class="logoimg" src="https://github.com/JoshEvans-Weber/HTML-Final-Project/blob/main/logo-no-bg.png?raw=true" alt="Seven Seas Logo">
+    </div>
 
-          <form class="contact-form">
+    <hr>
+
+    <input type="radio" id="col-1" name="grid-control" checked>
+    <div class="grid-viewport" id="menu-top">
+      <div class="grid-container">
+        <div class="grid-item">
+          <div class="menu-header">Contact Us</div>
+
+          <section class="contact-section">
+            <p class="form-intro">We'd love to hear from you. Fill out the form below and we'll get back to you within 24 hours.</p>
+
+            <form class="contact-form">
               <label for="name">Name:</label>
               <input type="text" id="name" name="name" required>
-              
+
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required>
 
               <label for="reason">What is the reason for contacting us?</label>
               <select id="reason" name="reason" required>
-                  <option value="" disabled selected>Select a reason...</option>
-                  <option value="recommendation">General Recommendation</option>
-                  <option value="review">Food/Service Review</option>
-                  <option value="event">Event Enquiry / Booking</option>
-                  <option value="report">Employee Report / Issue</option>
-                  <option value="catering">Catering Inquiry</option>
-                  <option value="other">Other Inquiry</option>
+                <option value="" disabled selected>Select a reason...</option>
+                <option value="recommendation">General Recommendation</option>
+                <option value="review">Food/Service Review</option>
+                <option value="event">Event Enquiry / Booking</option>
+                <option value="report">Employee Report / Issue</option>
+                <option value="catering">Catering Inquiry</option>
+                <option value="other">Other Inquiry</option>
               </select>
-              
+
               <label>How did you hear about Seven Seas?</label>
               <div class="survey-radio-group">
-                  <input type="radio" id="source-search" name="source" value="search">
-                  <label for="source-search">Search Engine (Google, Bing)</label>
-                  
-                  <input type="radio" id="source-social" name="source" value="social">
-                  <label for="source-social">Social Media (Facebook, Instagram)</label>
-                  
-                  <input type="radio" id="source-friend" name="source" value="friend">
-                  <label for="source-friend">Friend / Word of Mouth</label>
-                  
-                  <input type="radio" id="source-pass" name="source" value="pass">
-                  <label for="source-pass">Drove Past / Walked In</label>
+                <input type="radio" id="source-search" name="source" value="search">
+                <label for="source-search">Search Engine (Google, Bing)</label>
+
+                <input type="radio" id="source-social" name="source" value="social">
+                <label for="source-social">Social Media (Facebook, Instagram)</label>
+
+                <input type="radio" id="source-friend" name="source" value="friend">
+                <label for="source-friend">Friend / Word of Mouth</label>
+
+                <input type="radio" id="source-pass" name="source" value="pass">
+                <label for="source-pass">Drove Past / Walked In</label>
               </div>
-              
+
               <label for="message">Message:</label>
               <textarea id="message" name="message" rows="6" required></textarea>
-              
+
               <button type="submit" class="submit-button">Send Message</button>
-          </form>
-        </section>
-      </div>
+            </form>
+          </section>
+        </div>
       </div>
     </div>
-   <!-- viewport attached footer -->
+  </main>
   <footer>
     <div class="grid-footer">
       <div class="foot-grid-item">Joshua Evans all rights reserved</div>
@@ -79,5 +81,5 @@
       <div class="foot-grid-item">7Seas LTD.</div>
     </div>
   </footer>
-  </body>
+</body>
 </html>
