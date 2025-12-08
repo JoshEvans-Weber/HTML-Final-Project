@@ -437,7 +437,7 @@ footer {
         font-size: 0.9rem; /* Smaller menu text */
     }
     .menu-header {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
   
@@ -446,8 +446,8 @@ footer {
     .nav-button {
         padding: 5px 10px 5px 10px; /* Smaller padding */
     }
-    .prev-btn { left: 75%;
-                transform: translateX(-100%);}
+    .prev-btn { left: 50%;
+                transform: translateY(-100%);}
     .next-btn { right: 50%;
-                transform: translateX(0);}
+                transform: translateY(100%);}
 }
