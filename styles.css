@@ -400,8 +400,8 @@ footer {
         font-size: 4rem; /* Shrink menu headers */
     }
     /* --- Menu Navigation Button Adjustment --- */
-    .prev-btn { left: 15%; }
-    .next-btn { right: 15%; }
+    .prev-btn { left: 35%; }
+    .next-btn { right: 35%; }
 }
 
 /* --- max 768px query --- */
@@ -417,8 +417,8 @@ footer {
     }
 
     /* --- Navigation Button Adjustment --- */
-    .prev-btn { left: 25%; }
-    .next-btn { right: 25%; }
+    .prev-btn { left: 35%; }
+    .next-btn { right: 35%; }
 }
 
     /* --- max 480px query --- */
