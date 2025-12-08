@@ -446,6 +446,14 @@ footer {
     .nav-button {
         padding: 5px 10px 5px 10px; /* Smaller padding */
     }
-    .prev-btn { left: 10px;}
-    .next-btn { right: 10px;}
+    .prev-btn { 
+      left: 10px;
+      right: auto;
+      transform: translateX(100%);
+    }
+    .next-btn { 
+      right: 10px;
+      left: auto;
+      transform: translateX(100%);
+    }
 }
