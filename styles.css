@@ -157,6 +157,7 @@ footer {
 /* --- Hours of Operation Styles --- */
 
 .hours-container {
+    width: var(--col-width);
     background-color: rgba(0, 0, 0, 0.6);
     color: #f7f7f7;
     padding: 15px 30px;
