@@ -418,23 +418,23 @@ footer {
 
       /* Page 1: Wine */
     #col-1:checked ~ .grid-viewport { 
-        height: 2300px !important; 
+        height: 2000px !important; 
     }
     /* Page 2: Appetizers */
     #col-2:checked ~ .grid-viewport { 
-        height: 1900px !important; 
+        height: 1600px !important; 
     }
     /* Page 3: Entrees */
     #col-3:checked ~ .grid-viewport { 
-        height: 2000px !important; 
+        height: 1600px !important; 
     }
     /* Page 4: Sides/Salads (The subcard page) */
     #col-4:checked ~ .grid-viewport { 
-        height: 2500px !important; 
+        height: 3200px !important; 
     }
     /* Page 5: Desserts */
     #col-5:checked ~ .grid-viewport { 
-        height: 1500px !important; 
+        height: 1200px !important; 
     }
     
     /* Set reasonable default heights for the rest of the cards */
