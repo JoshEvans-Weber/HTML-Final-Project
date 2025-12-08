@@ -28,24 +28,11 @@
   --footer-bg-color: rgba(100, 100, 100, 0.7); 
 }
 
-/* --- Common Mixin Classes for Redundancy Elimination --- */
+/* --- Common Mixin Classes for Redundancy Elimination (REMOVED: @extend syntax) --- */
 
-/* Applied to: h1, footer, .grid-item, .grid-item-title, .grid-item-title-blk, .grid-item-small, .grid-item-small-blk, .head-grid-item, .foot-grid-item, .subcard */
-.blur-bg-mixin {
-  backdrop-filter: var(--common-blur-filter);
-  -webkit-backdrop-filter: var(--common-blur-filter);
-  background: var(--common-bg-color);
-  border: var(--common-border);
-}
-
-/* Applied to: .grid-item-title, .grid-item-title-blk, .grid-item-small, .grid-item-small-blk, .grid-item */
-.grid-flex-mixin {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  align-items: start;
-  justify-content: center;
-  font-weight: bold;
-}
+/* These mixins are no longer needed as their content is integrated into the classes below. */
+/* .blur-bg-mixin { ... } */
+/* .grid-flex-mixin { ... } */
 
 /* ------------------------------------------------------------------- */
 
@@ -90,7 +77,12 @@ h1 {
   padding: 10px 20px;
   color: var(--common-font-color);
   border-radius: 5px 5px 50px 50px;
-  @extend .blur-bg-mixin;
+  /* START: .blur-bg-mixin integrated */
+    backdrop-filter: var(--common-blur-filter);
+    -webkit-backdrop-filter: var(--common-blur-filter);
+    background: var(--common-bg-color);
+    border: var(--common-border);
+  /* END: .blur-bg-mixin integrated */
 }
 
 hr {
@@ -138,8 +130,19 @@ footer {
   height: var(--row-height);
   border-radius: 20px 50px 20px 50px;
   font-size: 1.2rem;
-  @extend .blur-bg-mixin;
-  @extend .grid-flex-mixin;
+  /* START: .blur-bg-mixin integrated */
+    backdrop-filter: var(--common-blur-filter);
+    -webkit-backdrop-filter: var(--common-blur-filter);
+    background: var(--common-bg-color);
+    border: var(--common-border);
+  /* END: .blur-bg-mixin integrated */
+  /* START: .grid-flex-mixin integrated */
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    justify-content: center;
+    font-weight: bold;
+  /* END: .grid-flex-mixin integrated */
 }
 
 .grid-item-title {
@@ -149,8 +152,19 @@ footer {
   border-radius: 20px;
   font-size: 4rem;
   padding: 10px 20px 2px 20px;
-  @extend .blur-bg-mixin;
-  @extend .grid-flex-mixin;
+  /* START: .blur-bg-mixin integrated */
+    backdrop-filter: var(--common-blur-filter);
+    -webkit-backdrop-filter: var(--common-blur-filter);
+    background: var(--common-bg-color);
+    border: var(--common-border);
+  /* END: .blur-bg-mixin integrated */
+  /* START: .grid-flex-mixin integrated */
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    justify-content: center;
+    font-weight: bold;
+  /* END: .grid-flex-mixin integrated */
 }
 
 .grid-item-title-blk {
@@ -161,8 +175,19 @@ footer {
   font-size: 4rem;
   padding: 20px;
   text-align: center;
-  @extend .blur-bg-mixin;
-  @extend .grid-flex-mixin;
+  /* START: .blur-bg-mixin integrated */
+    backdrop-filter: var(--common-blur-filter);
+    -webkit-backdrop-filter: var(--common-blur-filter);
+    background: var(--common-bg-color);
+    border: var(--common-border);
+  /* END: .blur-bg-mixin integrated */
+  /* START: .grid-flex-mixin integrated */
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    justify-content: center;
+    font-weight: bold;
+  /* END: .grid-flex-mixin integrated */
 }
 
 .cardimg {
@@ -240,8 +265,19 @@ footer {
   border-radius: 20px;
   font-size: 1.2rem;
   padding: 10px 20px 2px 20px;
-  @extend .blur-bg-mixin;
-  @extend .grid-flex-mixin;
+  /* START: .blur-bg-mixin integrated */
+    backdrop-filter: var(--common-blur-filter);
+    -webkit-backdrop-filter: var(--common-blur-filter);
+    background: var(--common-bg-color);
+    border: var(--common-border);
+  /* END: .blur-bg-mixin integrated */
+  /* START: .grid-flex-mixin integrated */
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    justify-content: center;
+    font-weight: bold;
+  /* END: .grid-flex-mixin integrated */
 }
 
 .grid-item-small-blk {
@@ -252,13 +288,24 @@ footer {
   text-align: center;
   font-size: 1.2rem;
   padding: 20px;
-  @extend .blur-bg-mixin;
-  @extend .grid-flex-mixin;
+  /* START: .blur-bg-mixin integrated */
+    backdrop-filter: var(--common-blur-filter);
+    -webkit-backdrop-filter: var(--common-blur-filter);
+    background: var(--common-bg-color);
+    border: var(--common-border);
+  /* END: .blur-bg-mixin integrated */
+  /* START: .grid-flex-mixin integrated */
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    justify-content: center;
+    font-weight: bold;
+  /* END: .grid-flex-mixin integrated */
 }
 
 /* Common style for Header and Footer Grid Structure */
 .grid-header,
-.three-column-grid { /* <-- **UPDATED: grid-footer is now .three-column-grid** */
+.three-column-grid { 
   display: grid;
   grid-template-columns: repeat(3, 33.33333%);
   grid-template-rows: repeat(1, 30px);
@@ -274,7 +321,12 @@ footer {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  @extend .blur-bg-mixin;
+  /* START: .blur-bg-mixin integrated */
+    backdrop-filter: var(--common-blur-filter);
+    -webkit-backdrop-filter: var(--common-blur-filter);
+    background: var(--common-bg-color);
+    border: var(--common-border);
+  /* END: .blur-bg-mixin integrated */
 }
 
 /* Specific footer item font size */
@@ -289,7 +341,12 @@ footer {
   align-items: start;
   padding: 20px;
   overflow-y: auto;
-  @extend .blur-bg-mixin;
+  /* START: .blur-bg-mixin integrated */
+    backdrop-filter: var(--common-blur-filter);
+    -webkit-backdrop-filter: var(--common-blur-filter);
+    background: var(--common-bg-color);
+    border: var(--common-border);
+  /* END: .blur-bg-mixin integrated */
 }
 
 .menu-header {
