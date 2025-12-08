@@ -442,8 +442,35 @@ footer {
     .foot-grid-item {
         font-size: .75rem;
     }
-    .grid-viewport {
-        height: auto !important;
+  
+    /* Page 1: Wine */
+    #col-1:checked ~ .grid-viewport { 
+        height: 1150px !important; 
+    }
+    /* Page 2: Appetizers */
+    #col-2:checked ~ .grid-viewport { 
+        height: 950px !important; 
+    }
+    /* Page 3: Entrees */
+    #col-3:checked ~ .grid-viewport { 
+        height: 1000px !important; 
+    }
+    /* Page 4: Sides/Salads (The subcard page) */
+    #col-4:checked ~ .grid-viewport { 
+        height: 1250px !important; 
+    }
+    /* Page 5: Desserts */
+    #col-5:checked ~ .grid-viewport { 
+        height: 900px !important; 
+    }
+    
+    /* Set reasonable default heights for the rest of the cards */
+    #col-6:checked ~ .grid-viewport,
+    #col-7:checked ~ .grid-viewport,
+    #col-8:checked ~ .grid-viewport,
+    #col-9:checked ~ .grid-viewport,
+    #col-10:checked ~ .grid-viewport { 
+        height: 600px !important; 
     }
     #col-4:checked ~ .grid-viewport .grid-container > .grid-item:nth-child(4) {
         /* This ensures the outer grid item stacks the subcards */
@@ -454,7 +481,6 @@ footer {
         grid-template-columns: 1fr !important;
         padding: 10px;
     }
-}
   
     /* --- Navigation Button Adjustment --- */
     .nav-button {
