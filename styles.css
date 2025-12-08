@@ -389,7 +389,7 @@ footer {
 @media (max-width: 1024px) {
     /* --- Global Resizing --- */
     :root {
-        --col-width: 700px; /* Reduced card width */
+        --col-width: 80vw; /* Reduced card width */
     }
 
     /* --- General Text Sizing --- */
