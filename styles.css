@@ -486,6 +486,9 @@ footer {
         margin-top: 0; /* Clear margin if needed */
         margin-bottom: 10px; /* Add separation below the header */
     }
+    .subcard > .bulletless.menu-list {
+        grid-row: 2; /* Place the menu list second */
+    }
   
     /* --- Navigation Button Adjustment --- */
     .nav-button {
