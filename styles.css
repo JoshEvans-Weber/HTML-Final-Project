@@ -449,11 +449,11 @@ footer {
     .prev-btn { 
       left: 10px;
       right: auto;
-      transform: translateX(100%);
+      transform: translateY(100%);
     }
     .next-btn { 
       right: 10px;
       left: auto;
-      transform: translateX(100%);
+      transform: translateY(100%);
     }
 }
