@@ -328,9 +328,9 @@ footer {
 
 .controls-wrapper {
     position: relative; 
-    width: 0; 
-    height: 0; 
-    margin: 0;
+    width: auto; 
+    height: auto; 
+    margin: 0 auto;
 }
 
 .fixed-controls-wrapper {
@@ -370,7 +370,6 @@ footer {
     /* REMOVE position: fixed; and bottom: 2.5px; */
     position: absolute; /* Changed to absolute to position relative to the wrapper */
     bottom: 45px; /* Use the raised position here by default */
-    justify-self: start;
     transition: background-color 0.2s;
     user-select: none;
     text-align: center;
@@ -378,8 +377,8 @@ footer {
 }
 .nav-button:hover { background-color: #2980b9; }
 
-.prev-btn { left: 33.5%; } 
-.next-btn { right: 33.5%; }
+.prev-btn { left: 5px; right: auto; }
+.next-btn { right: 5px; left: auto; }
 .head-left { center; }
 .head-center { center; }
 .head-right { center; }
