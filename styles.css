@@ -23,6 +23,9 @@
   --common-border: 1px solid #aaa;
   --common-blur-filter: blur(6.1px);
   --common-font-color: white;
+  
+  /* Dedicated background for fixed footer for visual distinction */
+  --footer-bg-color: rgba(100, 100, 100, 0.7); 
 }
 
 /* --- Common Mixin Classes for Redundancy Elimination --- */
@@ -87,7 +90,6 @@ h1 {
   padding: 10px 20px;
   color: var(--common-font-color);
   border-radius: 5px 5px 50px 50px;
-  /* Uses mixin styles */
   @extend .blur-bg-mixin;
 }
 
@@ -97,14 +99,17 @@ hr {
   border: none;
 }
 
+/* --- Footer (Fixed at Bottom with high Z-index) --- */
 footer {
   color: var(--common-font-color);
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 15;
-  /* Uses mixin styles */
-  @extend .blur-bg-mixin;
+  z-index: 50; 
+  backdrop-filter: var(--common-blur-filter);
+  -webkit-backdrop-filter: var(--common-blur-filter);
+  background: var(--footer-bg-color); 
+  border: none;
 }
 
 .bulletless {
@@ -133,7 +138,6 @@ footer {
   height: var(--row-height);
   border-radius: 20px 50px 20px 50px;
   font-size: 1.2rem;
-  /* Uses mixin styles */
   @extend .blur-bg-mixin;
   @extend .grid-flex-mixin;
 }
@@ -145,7 +149,6 @@ footer {
   border-radius: 20px;
   font-size: 4rem;
   padding: 10px 20px 2px 20px;
-  /* Uses mixin styles */
   @extend .blur-bg-mixin;
   @extend .grid-flex-mixin;
 }
@@ -154,11 +157,10 @@ footer {
   color: var(--common-font-color);
   height: var(--row-height);
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.52); /* Specific background overrides mixin */
+  background: rgba(0, 0, 0, 0.52);
   font-size: 4rem;
   padding: 20px;
   text-align: center;
-  /* Uses mixin styles */
   @extend .blur-bg-mixin;
   @extend .grid-flex-mixin;
 }
@@ -231,7 +233,6 @@ footer {
   border: 3px solid #e67e22;
   border-radius: 8px;
 }
-/* Removed extra closing brace '}' here */
 
 .grid-item-small {
   width: var(--col-width);
@@ -239,7 +240,6 @@ footer {
   border-radius: 20px;
   font-size: 1.2rem;
   padding: 10px 20px 2px 20px;
-  /* Uses mixin styles */
   @extend .blur-bg-mixin;
   @extend .grid-flex-mixin;
 }
@@ -248,11 +248,10 @@ footer {
   color: var(--common-font-color);
   height: var(--row-height);
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.52); /* Specific background overrides mixin */
+  background: rgba(0, 0, 0, 0.52);
   text-align: center;
   font-size: 1.2rem;
   padding: 20px;
-  /* Uses mixin styles */
   @extend .blur-bg-mixin;
   @extend .grid-flex-mixin;
 }
@@ -265,7 +264,6 @@ footer {
   grid-template-rows: repeat(1, 30px);
   grid-auto-flow: column;
   transition: transform var(--transition-speed) ease-in-out;
-  width: 100%; /* Added to grid-header/footer, was missing from footer originally */
 }
 
 /* Common style for Header and Footer Grid Items */
@@ -276,7 +274,6 @@ footer {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  /* Uses mixin styles */
   @extend .blur-bg-mixin;
 }
 
@@ -292,7 +289,6 @@ footer {
   align-items: start;
   padding: 20px;
   overflow-y: auto;
-  /* Uses mixin styles */
   @extend .blur-bg-mixin;
 }
 
@@ -490,6 +486,7 @@ footer {
   display: block;
 }
 
+/* --- Page Navigation Buttons (Fixed near Bottom/Footer with high Z-index) --- */
 .nav-button {
   cursor: pointer;
   padding: 1px 20px 2px 20px;
@@ -502,7 +499,7 @@ footer {
   transition: background-color 0.2s;
   user-select: none;
   text-align: center;
-  z-index: 100;
+  z-index: 150; 
 }
 
 .nav-button:hover {
@@ -517,22 +514,19 @@ footer {
   right: 33.5%;
 }
 
-/* These are setting alignment to 'center' on classes that don't directly control it.
-   It's safer to remove or define these if they are used elsewhere.
-   Since the original intention was likely 'justify-content: center;' which is already
-   handled by the `.head-grid-item` flex definition, I've simplified them by removing
-   the redundant property but keeping the selectors. */
 .head-left {}
 
 .head-center {}
 
 .head-right {}
 
+/* --- Header (Fixed at Top with high Z-index) --- */
 .grid-header {
   justify-self: end;
   position: fixed;
   top: 0px;
-  z-index: 15;
+  width: 100%; 
+  z-index: 100;
 }
 
 
@@ -803,7 +797,7 @@ footer {
 
 /* 1. Common Label Styles */
 .survey-radio-group label {
-  font-weight: normal; /* Override contact-form label boldness */
+  font-weight: normal; 
   font-size: 0.95rem;
   cursor: pointer;
   color: #ccc;
@@ -822,8 +816,8 @@ footer {
   opacity: 0;
   position: absolute;
   width: 0;
-  margin-right: 8px; /* Was duplicated in two selectors */
-  width: auto; /* Was duplicated in two selectors */
+  margin-right: 8px;
+  width: auto;
 }
 
 /* 3. The Highlight Rule: Checked State */
@@ -873,12 +867,12 @@ footer {
 
 .review-carousel-track {
   display: flex;
-  width: 400%; /* Consolidated the correct width */
+  width: 400%; 
   transition: transform 0.5s ease-in-out;
 }
 
 .review-slide {
-  width: 25%; /* Consolidated the correct width */
+  width: 25%; 
   flex-shrink: 0;
   padding: 20px 40px;
   box-sizing: border-box;
