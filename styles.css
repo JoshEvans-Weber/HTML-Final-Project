@@ -346,8 +346,8 @@ footer {
 .state-controls {
     display: none; 
     position: relative;
-    width: 0;
-    height: 0;
+    width: auto;
+    height: auto;
 }
 
 #col-1:checked ~ .controls-wrapper .state-1 { display: block; }
@@ -377,7 +377,7 @@ footer {
 }
 .nav-button:hover { background-color: #2980b9; }
 
-.prev-btn { left: 5px; right: auto; }
+.prev-btn { left: 5px; right: auto; } 
 .next-btn { right: 5px; left: auto; }
 .head-left { center; }
 .head-center { center; }
