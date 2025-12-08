@@ -445,6 +445,16 @@ footer {
     .grid-viewport {
         height: auto !important;
     }
+    #col-4:checked ~ .grid-viewport .grid-container > .grid-item:nth-child(4) {
+        /* This ensures the outer grid item stacks the subcards */
+        grid-template-columns: 1fr !important; /* Stack subcards vertically */
+        grid-template-rows: auto auto !important; /* Allow rows to be as tall as content */
+    }
+    .subcard {
+        grid-template-columns: 1fr !important;
+        padding: 10px;
+    }
+}
   
     /* --- Navigation Button Adjustment --- */
     .nav-button {
