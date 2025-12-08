@@ -321,19 +321,17 @@ footer {
 #col-8:checked ~ .grid-viewport { 
     height: 450.4px !important;
 }
-#col-9:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c9)); }
-#col-10:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c10)); }
-/* --- TELEPORT HACK: Disable animation and apply fade --- */
+/* --- Disable animation and apply fade --- */
 
-/* 1. CRITICAL FIX: Forces transition to NONE to prevent sliding across blank space */
-#col-10:checked ~ .controls-wrapper .teleport-btn[for="col-1"] ~ .grid-viewport .grid-container,
-#col-1:checked ~ .controls-wrapper .teleport-btn[for="col-10"] ~ .grid-viewport .grid-container {
+/* Forces transition to NONE to prevent sliding across blank space */
+#col-8:checked ~ .controls-wrapper .teleport-btn[for="col-1"] ~ .grid-viewport .grid-container,
+#col-1:checked ~ .controls-wrapper .teleport-btn[for="col-8"] ~ .grid-viewport .grid-container {
     transition: none !important; 
 }
 
-/* 2. Apply the fade animation to the viewport */
-#col-10:checked ~ .controls-wrapper .teleport-btn[for="col-1"] ~ .grid-viewport,
-#col-1:checked ~ .controls-wrapper .teleport-btn[for="col-10"] ~ .grid-viewport {
+/* Apply the fade animation to the viewport */
+#col-8:checked ~ .controls-wrapper .teleport-btn[for="col-1"] ~ .grid-viewport,
+#col-1:checked ~ .controls-wrapper .teleport-btn[for="col-8"] ~ .grid-viewport {
     animation: flash-fade 0.5s forwards; 
 }
 
@@ -360,8 +358,6 @@ footer {
 #col-6:checked ~ .controls-wrapper .state-6 { display: block; }
 #col-7:checked ~ .controls-wrapper .state-7 { display: block; }
 #col-8:checked ~ .controls-wrapper .state-8 { display: block; }
-#col-9:checked ~ .controls-wrapper .state-9 { display: block; }
-#col-10:checked ~ .controls-wrapper .state-10 { display: block; }
 
 .nav-button {
     cursor: pointer;
@@ -438,10 +434,6 @@ footer {
       #col-8:checked ~ .grid-viewport { 
         height: 450.4px !important; 
     }
-    #col-9:checked ~ .grid-viewport,
-    #col-10:checked ~ .grid-viewport { 
-        height: 600px !important; 
-    }
     .menu-header {
         font-size: 4rem; /* Shrink menu headers */
     }
@@ -492,10 +484,6 @@ footer {
     }
     #col-8:checked ~ .grid-viewport{ 
         height: 468.8px !important; 
-    }
-    #col-9:checked ~ .grid-viewport,
-    #col-10:checked ~ .grid-viewport { 
-        height: 600px !important; 
     }
 
     .subcard {
@@ -568,10 +556,6 @@ footer {
     }
     #col-8:checked ~ .grid-viewport{ 
         height: 524.8px !important; 
-    }
-    #col-9:checked ~ .grid-viewport,
-    #col-10:checked ~ .grid-viewport { 
-        height: 600px !important; 
     }
     #col-4:checked ~ .grid-viewport .grid-container > .grid-item:nth-child(4) {
         /* This ensures the outer grid item stacks the subcards */
