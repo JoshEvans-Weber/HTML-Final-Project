@@ -292,7 +292,7 @@ footer {
 }
 #col-4:checked ~ .grid-viewport .grid-container { transform: translateX(var(--shift-c4)); }
 #col-4:checked ~ .grid-viewport { 
-    height: 2069.4px !important;
+    height: 1609.5px !important;
 }
 #col-4:checked ~ .grid-viewport .grid-container > .grid-item:nth-child(4) {
     display: grid !important; 
