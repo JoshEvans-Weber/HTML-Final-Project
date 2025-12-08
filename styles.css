@@ -778,43 +778,45 @@ footer {
 
 /* --- Carousel Navigation Logic for Reviews Page --- */
 
-/* Hide the radio buttons used for control */
-#rev-img-1,
-#rev-img-2 {
-    display: none;
+.review-carousel-track {
+    display: flex;
+    /* REVISED: 4 slides requires 400% width */
+    width: 400%; 
+    transition: transform 0.5s ease-in-out;
 }
 
-/* 1. Define the horizontal shift when each radio button is checked (2 slides = 50% shift) */
+.review-slide {
+    /* REVISED: 100% / 4 slides = 25% width */
+    width: 25%; 
+    flex-shrink: 0; 
+    padding: 20px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Carousel Navigation Logic --- */
+
+/* 1. Define the horizontal shift when each radio button is checked */
 #rev-img-1:checked ~ .review-carousel-track { 
-    transform: translateX(0); /* Show Slide 1 */
+    transform: translateX(0%); /* Show Slide 1 */
 }
 #rev-img-2:checked ~ .review-carousel-track { 
-    transform: translateX(-50%); /* Show Slide 2 */
+    transform: translateX(-25%); /* Show Slide 2 */
+}
+#rev-img-3:checked ~ .review-carousel-track { 
+    transform: translateX(-50%); /* Show Slide 3 */
+}
+#rev-img-4:checked ~ .review-carousel-track { 
+    transform: translateX(-75%); /* Show Slide 4 */
 }
 
-/* Dots and Highlight */
-.review-carousel-nav {
-    position: absolute;
-    bottom: 5px;
-    width: 100%;
-    text-align: center;
-    padding-top: 10px;
-}
-
-.rev-nav-dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #aaa;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-/* 2. Highlight the active dot */
+/* 2. Highlight the active dot (Ensure to include the new dots 3 and 4) */
 #rev-img-1:checked ~ .review-carousel-nav label[for="rev-img-1"],
-#rev-img-2:checked ~ .review-carousel-nav label[for="rev-img-2"] {
-    background-color: #2ecc71; /* Green highlight for the active review */
+#rev-img-2:checked ~ .review-carousel-nav label[for="rev-img-2"],
+#rev-img-3:checked ~ .review-carousel-nav label[for="rev-img-3"],
+#rev-img-4:checked ~ .review-carousel-nav label[for="rev-img-4"] {
+    background-color: #2ecc71; 
     transform: scale(1.2);
 }
