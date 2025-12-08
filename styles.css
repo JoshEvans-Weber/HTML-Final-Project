@@ -481,6 +481,11 @@ footer {
         grid-template-columns: 1fr !important;
         padding: 10px;
     }
+    .subcard > .menu-header {
+        grid-row: 1; /* Place the header first */
+        margin-top: 0; /* Clear margin if needed */
+        margin-bottom: 10px; /* Add separation below the header */
+    }
   
     /* --- Navigation Button Adjustment --- */
     .nav-button {
