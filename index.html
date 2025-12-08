@@ -9,9 +9,13 @@
 
 <body>
   <header class="grid-header">
-    <nav class="head-grid-item"><a href="reviews.html" class="nav-button head-right">Reviews</a></nav>
-    <nav class="head-grid-item"><a href="#menu-top" class="nav-button head-center">View Menu</a></nav>
-    <nav class="head-grid-item"><a href="contact.html" class="nav-button head-center">Contact</a></nav>
+    <nav>
+      <ul class="three-column-grid bulletless">
+        <li class="head-grid-item"><a href="reviews.html" class="nav-button head-right">Reviews</a></li>
+        <li class="head-grid-item"><a href="#menu-top" class="nav-button head-center">View Menu</a></li>
+        <li class="head-grid-item"><a href="contact.html" class="nav-button head-center">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
@@ -60,41 +64,6 @@
     <input type="radio" id="col-8" name="grid-control">
     <input type="radio" id="col-9" name="grid-control">
     <input type="radio" id="col-10" name="grid-control">
-
-    <div class="controls-wrapper">
-      <div class="state-controls state-1">
-        <label class="nav-button prev-btn teleport-btn" for="col-8">Beer</label>
-        <label class="nav-button next-btn" for="col-2">Appetizers</label>
-      </div>
-      <div class="state-controls state-2">
-        <label class="nav-button prev-btn" for="col-1">Wine</label>
-        <label class="nav-button next-btn" for="col-3">Entrees</label>
-      </div>
-      <div class="state-controls state-3">
-        <label class="nav-button prev-btn" for="col-2">Appetizers</label>
-        <label class="nav-button next-btn" for="col-4">Sides / Salads</label>
-      </div>
-      <div class="state-controls state-4">
-        <label class="nav-button prev-btn" for="col-3">Entrees</label>
-        <label class="nav-button next-btn" for="col-5">Desserts</label>
-      </div>
-      <div class="state-controls state-5">
-        <label class="nav-button prev-btn" for="col-4">Sides / Salads</label>
-        <label class="nav-button next-btn teleport-btn" for="col-6">Cocktails</label>
-      </div>
-      <div class="state-controls state-6">
-        <label class="nav-button prev-btn" for="col-5">Desserts</label>
-        <label class="nav-button next-btn teleport-btn" for="col-7">Rum</label>
-      </div>
-      <div class="state-controls state-7">
-        <label class="nav-button prev-btn" for="col-6">Cocktails</label>
-        <label class="nav-button next-btn teleport-btn" for="col-8">Beer</label>
-      </div>
-      <div class="state-controls state-8">
-        <label class="nav-button prev-btn" for="col-7">Beer</label>
-        <label class="nav-button next-btn teleport-btn" for="col-1">Wine</label>
-      </div>
-    </div>
 
     <div class="grid-viewport" id="menu-top">
       <div class="grid-container">
@@ -525,8 +494,44 @@
       </div>
     </div>
   </main>
+
+  <div class="controls-wrapper">
+    <div class="state-controls state-1">
+      <label class="nav-button prev-btn teleport-btn" for="col-8">Beer</label>
+      <label class="nav-button next-btn" for="col-2">Appetizers</label>
+    </div>
+    <div class="state-controls state-2">
+      <label class="nav-button prev-btn" for="col-1">Wine</label>
+      <label class="nav-button next-btn" for="col-3">Entrees</label>
+    </div>
+    <div class="state-controls state-3">
+      <label class="nav-button prev-btn" for="col-2">Appetizers</label>
+      <label class="nav-button next-btn" for="col-4">Sides / Salads</label>
+    </div>
+    <div class="state-controls state-4">
+      <label class="nav-button prev-btn" for="col-3">Entrees</label>
+      <label class="nav-button next-btn" for="col-5">Desserts</label>
+    </div>
+    <div class="state-controls state-5">
+      <label class="nav-button prev-btn" for="col-4">Sides / Salads</label>
+      <label class="nav-button next-btn teleport-btn" for="col-6">Cocktails</label>
+    </div>
+    <div class="state-controls state-6">
+      <label class="nav-button prev-btn" for="col-5">Desserts</label>
+      <label class="nav-button next-btn teleport-btn" for="col-7">Rum</label>
+    </div>
+    <div class="state-controls state-7">
+      <label class="nav-button prev-btn" for="col-6">Cocktails</label>
+      <label class="nav-button next-btn teleport-btn" for="col-8">Beer</label>
+    </div>
+    <div class="state-controls state-8">
+      <label class="nav-button prev-btn" for="col-7">Beer</label>
+      <label class="nav-button next-btn teleport-btn" for="col-1">Wine</label>
+    </div>
+  </div>
+  
   <footer>
-    <div class="grid-footer">
+    <div class="three-column-grid">
       <div class="foot-grid-item">Joshua Evans all rights reserved</div>
       <div class="foot-grid-item"></div>
       <div class="foot-grid-item">7Seas LTD.</div>
