@@ -153,6 +153,50 @@ footer {
   max-width: 40%;
   height: auto;
 }
+
+/* --- Hours of Operation Styles --- */
+
+.hours-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #f7f7f7;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.hours-container p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.hours-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hours-list li {
+    padding: 5px;
+    text-align: left;
+}
+/* column alignment */
+.hours-list li:nth-child(odd) {
+    text-align: right;
+    padding-right: 15px; 
+}
+
+.hours-list li span {
+    font-weight: bold;
+    color: #3498db;
+    margin-left: 5px;
+}
+
 .map {
 display: block; 
     /* Center map setting automatic left and right margins */
