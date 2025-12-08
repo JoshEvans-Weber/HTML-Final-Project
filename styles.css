@@ -1,6 +1,6 @@
 /* --- Global Variables & Keyframes --- */
 :root {
-  --col-width: 800px; 
+  --col-width: 75%; 
   --row-height: auto;
   --cards-per-page: 1;
   --total-pages: 10;
