@@ -453,17 +453,18 @@ footer {
   
   
     /* --- Navigation Button Adjustment --- */
-    .nav-button {
-        padding: 5px 10px 5px 10px; /* Smaller padding */
-        transform: translateY(-45px);
+/* Ensure the wrapper uses the mobile width */
+    .fixed-controls-wrapper {
+        width: 90vw; 
     }
+    
+    /* Navigation Button Adjustment (Relative to the 90vw wrapper) */
     .prev-btn { 
-      left: 1%;
-      right: auto;
-      transform: translateY(100%);
+        left: 0; /* Align to the left edge of the 90vw wrapper */
+        right: auto !important;
     }
     .next-btn { 
-      right: 1%;
-      left: auto;
+        right: 0; /* Align to the right edge of the 90vw wrapper */
+        left: auto !important;
     }
 }
