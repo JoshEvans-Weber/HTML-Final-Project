@@ -325,13 +325,14 @@ footer {
     animation: flash-fade 0.5s forwards; 
 }
 
-
+/*
 .controls-wrapper {
     position: relative; 
     width: auto; 
     height: auto; 
     margin: 0 auto;
-}
+} 
+*/
 
 .fixed-controls-wrapper {
     position: fixed;
