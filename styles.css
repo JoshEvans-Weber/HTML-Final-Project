@@ -447,7 +447,7 @@ footer {
         padding: 5px 10px 5px 10px; /* Smaller padding */
     }
     .prev-btn { left: 50%;
-                transform: translateY(-100%);}
+                transform: translateY(100%);}
     .next-btn { right: 50%;
                 transform: translateY(100%);}
 }
