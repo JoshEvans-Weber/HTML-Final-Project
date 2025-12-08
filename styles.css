@@ -400,15 +400,15 @@ footer {
     }
     /* Page 1: Wine */
     #col-1:checked ~ .grid-viewport { 
-        height: 1410px !important; 
+        height: 1415px !important; 
     }
     /* Page 2: Appetizers */
     #col-2:checked ~ .grid-viewport { 
-        height: 1165px !important; 
+        height: 1160px !important; 
     }
     /* Page 3: Entrees */
     #col-3:checked ~ .grid-viewport { 
-        height: 1210px !important; 
+        height: 1205px !important; 
     }
     /* Page 4: Sides/Salads (The subcard page) */
     #col-4:checked ~ .grid-viewport { 
