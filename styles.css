@@ -381,3 +381,72 @@ footer {
   top:0px;
   z-index:15;
 }
+
+
+/* Media Queries */
+
+/* --- max 1024px query --- */
+@media (max-width: 1024px) {
+    /* --- Global Resizing --- */
+    :root {
+        --col-width: 700px; /* Reduced card width */
+    }
+
+    /* --- General Text Sizing --- */
+    .grid-item-title-blk {
+        font-size: 3rem; /* Shrink title */
+    }
+    .menu-header {
+        font-size: 4rem; /* Shrink menu headers */
+    }
+    /* --- Menu Navigation Button Adjustment --- */
+    .prev-btn { left: 15%; }
+    .next-btn { right: 15%; }
+}
+
+/* --- max 768px query --- */
+@media (max-width: 768px) {
+    /* --- Global Resizing --- */
+    :root {
+        --col-width: 550px; /* Further reduced card width */
+    }
+
+    /* --- General Text Sizing --- */
+    .grid-item-title-blk {
+        font-size: 2.5rem;
+    }
+
+    /* --- Navigation Button Adjustment --- */
+    .prev-btn { left: 25%; }
+    .next-btn { right: 25%; }
+}
+
+    /* --- max 480px query --- */
+@media (max-width: 480px) {
+    /* --- Global Resizing --- */
+    :root {
+        --col-width: 90vw; /* Use 90% of the viewport width for better fit */
+    }
+
+    /* --- General Text Sizing --- */
+    .grid-item-title-blk {
+        font-size: 2rem;
+        padding: 10px;
+    }
+    .grid-item-small-blk, .menu-item, .menu-item-name {
+        font-size: 0.9rem; /* Smaller menu text
+    }
+    .menu-header {
+        font-size: 3rem;
+    }
+
+  
+  
+    /* --- Navigation Button Adjustment --- */
+    .nav-button {
+        bottom: 100px;
+        padding: 5px 10px 5px 10px; /* Smaller padding */
+    }
+    .prev-btn { left: 2%;}
+    .next-btn { right: 2%;}
+}
