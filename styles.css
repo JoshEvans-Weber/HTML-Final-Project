@@ -58,6 +58,17 @@ hr {
   background-color: rgba(124,124,124, 0.55);
   border: none;
 }
+
+header {
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+  color: white;
+  position: fixed;
+  top:0;
+  width: 100%;
+  z-index: 15;
+}
+
 footer {
   backdrop-filter: blur(6.1px);
   -webkit-backdrop-filter: blur(6.1px);
