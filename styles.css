@@ -82,6 +82,19 @@ hr {
   border: none;
 }
 
+/* --- Header (Fixed at Top with high Z-index) --- */
+header {
+  color: var(--common-font-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  backdrop-filter: var(--common-blur-filter);
+  -webkit-backdrop-filter: var(--common-blur-filter);
+  background: var(--footer-bg-color);
+  border: none;
+}
+
 /* --- Footer (Fixed at Bottom with high Z-index) --- */
 footer {
   color: var(--common-font-color);
@@ -479,6 +492,7 @@ footer {
 }
 
 .controls-wrapper {
+  z-index: 75;
   position: relative;
   width: 0;
   height: 0;
